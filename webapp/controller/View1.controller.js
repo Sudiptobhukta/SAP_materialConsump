@@ -11,15 +11,12 @@ sap.ui.define([
     return Controller.extend("zmatconsump.controller.View1", {
 
         onInit() {
-            // this.oDataModel = new ODataModel("/sap/opu/odata/sap/Z_MATERIALCONSUMPTION_REP", {
-            //     defaultCountMode: "None"
-            // });
-            // this.getView().setModel(this.oDataModel);
+          
             
         },
         
         setDataModel: function () {
-            debugger
+            // debugger
             let oView = this.byId("MainList");
 
             // Check if oView is valid
@@ -33,7 +30,7 @@ sap.ui.define([
            
         },
         getValueHelpPlant: async function () {
-            debugger
+            // debugger
             var oBusyDialog = new sap.m.BusyDialog({
                 text: "Please wait"
             });
@@ -186,7 +183,7 @@ sap.ui.define([
             
         },
         onClickupload: function () {
-            debugger
+           
             // let data = this.byId("MainList").getModel("TableData").getProperty("/TradeData");
             let data =  this.tableData
 
@@ -223,7 +220,7 @@ sap.ui.define([
                 contentType: "application/json",
                 data: JSON.stringify(ndata),
                 success: function (response) {
-                    debugger
+                    // debugger
                     console.log('Upload successful:', response);
                     sap.m.MessageToast.show(response);
                     that.byId("_IDGenSmartTable1").rebindTable(true);
@@ -238,7 +235,7 @@ sap.ui.define([
         },
         
         onClickExport: function (oEvent) {
-            debugger;
+        
            
             const selectedIndices = this.byId("_IDGenTable").getSelectedIndices();
             const selectedData = [];
@@ -258,6 +255,7 @@ sap.ui.define([
                     rowData['Difference'] = context.getObject('difference');
                     rowData['Storagelocation'] = context.getObject('storagelocation');
                     rowData['MatDesc'] = context.getObject('matdesc');
+                    rowData['Batch'] =  context.getObject('batch')
                     selectedData.push(rowData);
                 }
             }
