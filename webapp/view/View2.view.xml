@@ -1,0 +1,44 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="zmatconsump.controller.View2"
+	height="100%">
+
+		<!-- use this to make the table occupy the available screen height -->
+		<VBox id="_IDGenVBox2" fitContainer="true">
+			<smartFilterBar:SmartFilterBar id="smartFilterBar1" entitySet="ZR_zrepmaterialCDS" persistencyKey="SmartFilter_Explored"  >
+				<smartFilterBar:controlConfiguration>
+
+					<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration" key="Plant">
+					</smartFilterBar:ControlConfiguration>
+
+					<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration3" key="Material">
+				
+						</smartFilterBar:ControlConfiguration>
+
+				<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration12" key="rangedate">
+
+					</smartFilterBar:ControlConfiguration>
+                </smartFilterBar:controlConfiguration>
+
+				
+			</smartFilterBar:SmartFilterBar>
+			<smartTable:SmartTable id="LineItemsSmartTable" entitySet="ZR_zrepmaterialCDS" smartFilterId="smartFilterBar1" tableType="Table" enableExport="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" 
+			enableAutoColumnWidth="true" editTogglable="false" app:useSmartToggle="true" 
+			initiallyVisibleFields="Plant,Material,Matdesc,Fromdate,Todate,Shift,Quantity,Um,ActualQty,Difference,Storagelocation,Batch">
+				<!-- layout data used to make the table growing but the filter bar fixed -->
+				<smartTable:layoutData>
+					<FlexItemData id="_IDGenFlexItemData3" growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData>
+			</smartTable:SmartTable>
+		</VBox>
+</mvc:View>
+
+
+
+
+

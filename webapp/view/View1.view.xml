@@ -1,0 +1,93 @@
+
+<mvc:View xmlns:cards="sap.f.cards" xmlns:table="sap.ui.table" 
+	xmlns:smartfield="sap.ui.comp.smartfield"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:plugins="sap.m.plugins"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="zmatconsump.controller.View1"
+	height="100%">
+
+	<!-- use this to make the table occupy the available screen height -->
+    
+
+
+<VBox id="_IDGenVBox" fitContainer="true">
+
+    <smartFilterBar:SmartFilterBar id="smartFilterBar"
+			entitySet="ZC_CUSTOMENTITY" persistencyKey="SmartFilter_Explored" >
+            <smartFilterBar:controlConfiguration >
+                <smartFilterBar:ControlConfiguration
+                    id="_IDGenControlConfiguration1"
+                    key="Plant"
+                    visibleInAdvancedArea="true"
+                   
+                />
+                <smartFilterBar:ControlConfiguration
+                    id="_IDGenControlConfiguration2"
+                    key="Material"
+                    visibleInAdvancedArea="true"
+                    
+                />
+                <!-- <smartFilterBar:ControlConfiguration
+                    id="_IDGenControlConfiguration3"
+                    key="Rangedate"
+                    visibleInAdvancedArea="true"
+                /> -->
+            </smartFilterBar:controlConfiguration>
+			<smartFilterBar:layoutData>
+				<FlexItemData id="_IDGenFlexItemData" shrinkFactor="0" />
+			</smartFilterBar:layoutData>    
+
+		</smartFilterBar:SmartFilterBar>
+     
+    
+		 <smartTable:SmartTable id="_IDGenSmartTable1" entitySet="ZC_CUSTOMENTITY"
+			smartFilterId="smartFilterBar" enableExport="true" beforeExport="onBeforeExport"
+			useVariantManagement="false" useTablePersonalisation="true" header="Products"
+			showRowCount="true" persistencyKey="SmartTableRefApp_Explored" 
+			enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true"
+			app:preserveDecimals="false" initiallyVisibleFields="Material,Rangedate,Quantity,Um,Actual_Qty,Difference,Storagelocation,Plant" > 
+			 <smartTable:customToolbar>
+             <OverflowToolbar id="_IDGenOverflowToolbar2">
+            <ToolbarSpacer id="_IDGenToolbarSpacer" />
+            <Button id="_IDGenButton" text="Display"
+            press="navigatePage"
+            ></Button>
+
+             <u:FileUploader
+                        id="fileUploader1"
+                        name="myFileUpload"
+                        uploadUrl="upload/"
+                        fileType="XLSX,xlsx"
+                        class="sapUiMediumMargin"
+                        tooltip="Upload your file to the local server"
+                        change="browseAndUpload"
+                    />
+                    <Button
+                        id="_IDGenButtonExport1"
+                        text="Export"
+                        icon="sap-icon://excel-attachment"
+                        press="onClickExport"
+                    />
+                    <Button
+                        id="_IDGenButtonUpload2"
+                        text="Upload"
+                        icon="sap-icon://upload"
+                        press="onClickupload"
+                    />
+                    </OverflowToolbar>
+             </smartTable:customToolbar>
+			<smartTable:layoutData>
+				<FlexItemData id="_IDGenFlexItemData1" growFactor="1" baseSize="0%" />
+			</smartTable:layoutData>
+			<table:Table id="_IDGenTable" ></table:Table>
+			
+
+				
+		</smartTable:SmartTable>
+	</VBox>
+</mvc:View>
