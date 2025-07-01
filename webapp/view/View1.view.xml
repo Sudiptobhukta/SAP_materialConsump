@@ -61,11 +61,11 @@
             press="navigatePage"
             ></Button>
 
-            <!-- <Button
+            <Button
              id="_IDGenButton1"
               press="VarianceSheet" 
               text="Variance Material">
-            </Button> -->
+            </Button>
 
              <u:FileUploader
                         id="fileUploader1"
