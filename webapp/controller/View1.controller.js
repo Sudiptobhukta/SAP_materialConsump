@@ -183,7 +183,7 @@ sap.ui.define([
             
         },
         onClickupload: function () {
-           
+           debugger
             // let data = this.byId("MainList").getModel("TableData").getProperty("/TradeData");
             let data =  this.tableData
 
@@ -208,7 +208,8 @@ sap.ui.define([
                     "Todate" : excelDateToJSDate(newdata["Todate"]),
                     "Shift" : newdata["Shift"] || " ",
                     "Storagelocation" : newdata["Storagelocation"],
-                    "matdesc" : newdata["MatDesc"]
+                    "matdesc" : newdata["MatDesc"],
+                    'batch' : newdata["Batch"]
                     
                 }
                
@@ -282,7 +283,11 @@ sap.ui.define([
         navigatePage: function() {
             this.getOwnerComponent().getRouter().navTo("RouteView2");
             history.go(0);
+        },VarianceSheet : function() {
+            this.getOwnerComponent().getRouter().navTo("RouteView3");
+            history.go(0);
         }
+
        
         
     });

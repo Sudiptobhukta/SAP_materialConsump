@@ -20,7 +20,7 @@
 				
 						</smartFilterBar:ControlConfiguration>
 
-				<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration12" key="rangedate">
+				<smartFilterBar:ControlConfiguration id="_IDGenControlConfiguration121" key="rangedate">
 
 					</smartFilterBar:ControlConfiguration>
                 </smartFilterBar:controlConfiguration>
@@ -32,7 +32,7 @@
 			initiallyVisibleFields="Plant,Material,Matdesc,Fromdate,Todate,Shift,Quantity,Um,ActualQty,Difference,Storagelocation,Batch">
 				<!-- layout data used to make the table growing but the filter bar fixed -->
 				<smartTable:layoutData>
-					<FlexItemData id="_IDGenFlexItemData3" growFactor="1" baseSize="0%"/>
+					<FlexItemData id="_IDGenFlexItemData34" growFactor="1" baseSize="0%"/>
 				</smartTable:layoutData>
 			</smartTable:SmartTable>
 		</VBox>

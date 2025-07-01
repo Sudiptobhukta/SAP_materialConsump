@@ -21,7 +21,7 @@
 			entitySet="ZC_CUSTOMENTITY" persistencyKey="SmartFilter_Explored" >
             <smartFilterBar:controlConfiguration >
                 <smartFilterBar:ControlConfiguration
-                    id="_IDGenControlConfiguration1"
+                    id="_IDGenControlConfiguration11"
                     key="Plant"
                     visibleInAdvancedArea="true"
                    
@@ -54,9 +54,18 @@
 			 <smartTable:customToolbar>
              <OverflowToolbar id="_IDGenOverflowToolbar2">
             <ToolbarSpacer id="_IDGenToolbarSpacer" />
-            <Button id="_IDGenButton" text="Display"
+
+            <Button
+             id="_IDGenButton"
+              text="Display"
             press="navigatePage"
             ></Button>
+
+            <!-- <Button
+             id="_IDGenButton1"
+              press="VarianceSheet" 
+              text="Variance Material">
+            </Button> -->
 
              <u:FileUploader
                         id="fileUploader1"
