@@ -21,6 +21,6 @@ builder:
           name: ZMATCONSPV2
           description: material consumption rep
           package: ZMATERIALCONSUMPTIONREP
-          transport: NXSK902502
+          transport: NXSK902799
         exclude:
           - /test/
