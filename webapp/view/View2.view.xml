@@ -1,4 +1,4 @@
-<mvc:View
+<mvc:View xmlns:table="sap.ui.table"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
@@ -27,13 +27,29 @@
 
 				
 			</smartFilterBar:SmartFilterBar>
-			<smartTable:SmartTable id="LineItemsSmartTable" entitySet="ZR_zrepmaterialCDS" smartFilterId="smartFilterBar1" tableType="Table" enableExport="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" 
+			<smartTable:SmartTable id="LineItemsSmartTable" entitySet="ZR_zrepmaterialCDS"
+			 smartFilterId="smartFilterBar1" tableType="Table" enableExport="true" beforeExport="onBeforeExport"  useVariantManagement="true"
+			  useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" 
 			enableAutoColumnWidth="true" editTogglable="false" app:useSmartToggle="true" 
 			initiallyVisibleFields="Plant,Material,Matdesc,Fromdate,Todate,Shift,Quantity,Um,ActualQty,Difference,Storagelocation,Batch">
-				<!-- layout data used to make the table growing but the filter bar fixed -->
+			<smartTable:customToolbar>
+			<OverflowToolbar id="_IDGenOverflowToolbar1" >
+			
+			<ToolbarSpacer id="_IDGenToolbarSpacer1" />
+			
+				<Button 
+							id="_IDGenButton1"
+							text="Delete"
+							icon="sap-icon://Delete"
+							press="onClickdelete"
+						/>
+			</OverflowToolbar>
+			</smartTable:customToolbar>
+				
 				<smartTable:layoutData>
 					<FlexItemData id="_IDGenFlexItemData34" growFactor="1" baseSize="0%"/>
 				</smartTable:layoutData>
+				<table:Table id="_IDGenTable1" ></table:Table>
 			</smartTable:SmartTable>
 		</VBox>
 </mvc:View>
